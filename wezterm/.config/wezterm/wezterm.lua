@@ -1,0 +1,89 @@
+-- local b = require("utils/background")
+-- local w = require("utils/wallpaper")
+
+---@type WeztermPlugin
+
+local wezterm = require("wezterm")
+---@type WeztermConfig
+local config = wezterm.config_builder()
+
+-- Color scheme
+local function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
+end
+
+local function scheme_for_appearance(appearance, light, dark)
+	if appearance:find("Dark") then
+		return dark
+	else
+		return light
+	end
+end
+
+-- config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = scheme_for_appearance(get_appearance(), "One Light (Gogh)", "One Half Black (Gogh)")
+
+-- Font
+config.font = wezterm.font("JetBrains Mono")
+config.font_size = 15.5
+
+-- Wallpaper
+config.background = {
+	{
+		source = {
+			File = scheme_for_appearance(
+				get_appearance(),
+				"C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/vs-code-light.png",
+				"C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/vs-code.png"
+			),
+		},
+		attachment = "Fixed",
+		repeat_x = "Repeat",
+		repeat_y = "Repeat",
+		vertical_align = "Middle",
+		vertical_offset = 0,
+		horizontal_align = "Center",
+		horizontal_offset = 0,
+		opacity = 1,
+	},
+	{
+		source = {
+			File = "C:/Users/Jesse/Pictures/Walli/.drawings/v2/endless-summer.jpg",
+		},
+		attachment = "Fixed",
+		repeat_x = "NoRepeat",
+		vertical_align = "Middle",
+		vertical_offset = 0,
+		horizontal_align = "Center",
+		horizontal_offset = 0,
+		opacity = 0.1,
+		-- opacity = 0.1,
+		hsb = nil,
+		-- height = "100%",
+		-- width = "100%",
+	},
+}
+
+-- Other stuff
+config.keys = {
+	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
+}
+
+config.window_padding = {
+	bottom = 0,
+	left = 0,
+	right = 0,
+	top = 0,
+}
+
+config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = true
+config.window_close_confirmation = "NeverPrompt"
+config.automatically_reload_config = true
+config.warn_about_missing_glyphs = false
+
+return config
