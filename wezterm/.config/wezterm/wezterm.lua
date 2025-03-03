@@ -36,8 +36,10 @@ config.background = {
 		source = {
 			File = scheme_for_appearance(
 				get_appearance(),
-				"C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/vs-code-light.png",
-				"C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/vs-code.png"
+				"C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/catppuccin-latte-light.png",
+				"C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/catppuccin-mocha-dark.png"
+				-- "C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/vs-code-light.png",
+				-- "C:/Users/Jesse/Pictures/Walli/.drawings/zzz/colors/vs-code.png"
 			),
 		},
 		attachment = "Fixed",
@@ -49,22 +51,23 @@ config.background = {
 		horizontal_offset = 0,
 		opacity = 1,
 	},
-	{
-		source = {
-			File = "C:/Users/Jesse/Pictures/Walli/.drawings/v2/endless-summer.jpg",
-		},
-		attachment = "Fixed",
-		repeat_x = "NoRepeat",
-		vertical_align = "Middle",
-		vertical_offset = 0,
-		horizontal_align = "Center",
-		horizontal_offset = 0,
-		opacity = 0.1,
-		-- opacity = 0.1,
-		hsb = nil,
-		-- height = "100%",
-		-- width = "100%",
-	},
+
+	-- {
+	-- 	source = {
+	-- 		File = "C:/Users/Jesse/Pictures/Walli/.drawings/v2/endless-summer.jpg",
+	-- 	},
+	-- 	attachment = "Fixed",
+	-- 	repeat_x = "NoRepeat",
+	-- 	vertical_align = "Middle",
+	-- 	vertical_offset = 0,
+	-- 	horizontal_align = "Center",
+	-- 	horizontal_offset = 0,
+	-- 	opacity = 0.1,
+	-- 	-- opacity = 0.1,
+	-- 	hsb = nil,
+	-- 	-- height = "100%",
+	-- 	-- width = "100%",
+	-- },
 }
 
 -- Other stuff
